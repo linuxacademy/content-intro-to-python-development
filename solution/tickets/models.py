@@ -1,0 +1,20 @@
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Ticket(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    status = db.Column(db.Integer, nullable=False)
+    url = db.Column(db.String(100), nullable=True)
+
+    statuses_dict = {
+        0: 'Reported',
+        1: 'In Progress',
+        2: 'In Review',
+        3: 'Resolved',
+    }
+
+    def status_string(self):
+        return statuses_dict[self.status]
+
