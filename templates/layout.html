@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tickets</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+  <script defer src="{{ url_for('static', filename='font-awesome-v5.3.1.js') }}"></script>
+</head>
+<body>
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ url_for('tickets') }}">
+        Tickets Dashboard
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      {% block title %}{% endblock %}
+    </h1>
+
+    {% block body %}{% endblock %}
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}Tickets{% endblock %}
+
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>URL</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <!-- EXAMPLE ROW, substitue the real information from the tickets in the database -->
+  <tr>
+    <th>TICKET_ID</th>
+    <td>TICKET_NAME</td>
+    <td>TICKET_STATUS</td>
+    <td>
+      <a href="TICKET_URL">TICKET_URL</a>
+    </td>
+    <td>
+      <a href="TICKET_URL">Details</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+{% endblock %}
