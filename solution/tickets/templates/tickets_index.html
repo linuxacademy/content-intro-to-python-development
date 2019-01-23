@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Tickets{% endblock %}
+
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>URL</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <!-- EXAMPLE ROW, substitue the real information from the tickets in the database -->
+  {% for ticket in tickets %}
+    <tr>
+      <th>{{ticket.id}}</th>
+      <td>{{ticket.name}}</td>
+      <td>{{ticket.status_string()}}</td>
+      <td>
+        <a href="{{ticket.url}}">{{ticket.url}}</a>
+      </td>
+      <td>
+        <a href="{{url_for('tickets_show', ticket_id=ticket.id)}}">Details</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
