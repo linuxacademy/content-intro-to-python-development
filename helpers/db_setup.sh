@@ -14,10 +14,10 @@ sudo yum remove docker \
 sudo yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
-sudo yum-config-manager \
+sudo yum-config-manager -y \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 
 echo "Starting and enabling Docker"
 sudo systemctl start docker
