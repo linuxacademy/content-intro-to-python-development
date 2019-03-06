@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1 class="is-size-3">New Note</h1>
+
+  <form action="{{ url_for('note_create') }}" method="post">
+    <div class="field">
+      <label class="label" for="title">Title</label>
+      <div class="control">
+        <input name="title" value="{{ request.form['title'] }}" class="input"></input>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="body">Body (Supports Markdown)</label>
+      <div class="control">
+        <textarea name="body" class="textarea has-text-monospaced">{{ request.form['body'] }}</textarea>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <input type="submit" value="Create Note" class="button is-primary" />
+      </div>
+      <div class="control">
+        <a href="{{ url_for('note_index') }}" class="button is-text">Cancel</a>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}
