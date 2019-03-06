@@ -12,7 +12,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">Notes</a>
+          <a class="navbar-item" href="{{ url_for('index') }}">Notes</a>
 
           <div class="navbar-burger" data-target="navMenu">
             <span></span>
@@ -23,14 +23,14 @@
         <div class="navbar-menu" id="navMenu">
           <div class="navbar-end">
             {% if g.user %}
-              <a class="navbar-item" href="#" aria-label="New Note">
+              <a class="navbar-item" href="{{ url_for('note_create') }}" aria-label="New Note">
                 <i class="far fa-plus-square"></i>
               </a>
-              <a class="navbar-item"  href="#">
+              <a class="navbar-item"  href="{{ url_for('log_out') }}">
                 Log Out
               </a>
             {% else %}
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="{{ url_for('log_in') }}">
                 Log In
               </a>
               <a class="navbar-item" href="{{ url_for('sign_up') }}">
