@@ -3,7 +3,7 @@ def print_todo(todo):
     print_todo takes in a todo dictionary and prints it out
     with by separating the `name` from the `body` using a colon (:).
 
-    >>> todo = {'name': 'Example 1', 'body': 'This is a test task'}
+    >>> todo = {'name': 'Example 1', 'body': 'This is a test task', 'points': 3}
     >>> print_todo(todo)
     Example 1: This is a test task
     >>>
@@ -19,9 +19,9 @@ def take_first(todos):
     ... {'name': 'Task 2', 'body': 'Yet another example task', 'points': 2}]
     >>> todo, todos = take_first(todos)
     >>> todo
-    {'name': 'Example 1', 'body': 'This is a test task'}
+    {'name': 'Example 1', 'body': 'This is a test task', 'points': 3}
     >>> todos
-    [{'name': 'Task 2', 'body': 'Yet another example task'}]
+    [{'name': 'Task 2', 'body': 'Yet another example task', 'points': 2}]
     """
     return
 
@@ -30,7 +30,7 @@ def sum_points(todo1, todo2):
     sum_points receives two todo dictionaries and returns sum of their `point` values.
 
     >>> todos = [{'name': 'Example 1', 'body': 'This is a test task', 'points': 3},
-    ... {'name': 'Task 2', 'body': 'Yet another example task', 'points': }]
+    ... {'name': 'Task 2', 'body': 'Yet another example task', 'points': 2}]
     >>> sum_points(todos[0], todos[1])
     5
     """
