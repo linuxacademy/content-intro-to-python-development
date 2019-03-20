@@ -1,43 +1,34 @@
-def print_todo(todo):
+class Todo:
     """
-    print_todo takes in a todo dictionary and prints it out
-    with by separating the `name` from the `body` using a colon (:).
+    Todo represents a task with a name, description, point value, and completed.
 
-    >>> todo = {'name': 'Example 1', 'body': 'This is a test task', 'points': '3'}
-    >>> print_todo(todo)
-    Example 1: This is a test task
-    >>>
-    """
-    print(f"{todo['name']}: {todo['body']}")
+    A new Todo should have a `completed` field that defaults to `False`.
+    All other attributes must be provided.
 
-def take_first(todos):
+    >>> todo = Todo(name='Get Lunch', description='Need to eat.', points=0)
+    >>> print(todo)
+    Get Lunch (Incomplete - 0 points): Need to eat.
+    >>> todo.completed = True
+    >>> print(todo)
+    Get Lunch (Complete - 0 points): Need to eat.
+    >>> todo2 = Todo(name='Test', description='Another todo', points=1, completed=True)
     """
-    take_first receives a list of todos and removes the first todo
-    and returns that todo and the remaining todos in a touple
+    pass
 
-    >>> todos = [{'name': 'Example 1', 'body': 'This is a test task', 'points': '3'},
-    ... {'name': 'Task 2', 'body': 'Yet another example task', 'points': '2'}]
-    >>> todo, todos = take_first(todos)
-    >>> todo
-    {'name': 'Example 1', 'body': 'This is a test task', 'points': '3'}
-    >>> todos
-    [{'name': 'Task 2', 'body': 'Yet another example task', 'points': '2'}]
-    >>> todos = []
-    >>> take_first(todos)
-    (None, [])
+class TodoList:
     """
-    todo = todos.pop(0)
-    return (todo, todos)
+    TodoList wraps a list of Todo objects and implements some functionality that
+    utilize the information from the entire collection.
 
-def sum_points(todo1, todo2):
+    >>> todo = Todo(name='Get Lunch', description='Need to eat', points=0, completed=True)
+    >>> todo2 = Todo(name='Submit Talk Proposal', description='Write and submit talk for PyCon', points=3)
+    >>> todo_list = TodoList([todo, todo2])
+    >>> todo_list.average_points()
+    1.5
+    >>> todo_list.completed()
+    [Get Lunch (Complete - 0 points): Need to eat]
+    >>> todo_list.incomplete()
+    [Submit Talk Proposal (Incomplete - 3 points): Write and submit talk for PyCon]
     """
-    sum_points receives two todo dictionaries and returns sum of their `point` values.
-
-    >>> todos = [{'name': 'Example 1', 'body': 'This is a test task', 'points': '3'},
-    ... {'name': 'Task 2', 'body': 'Yet another example task', 'points': '2'},
-    ... {'name': 'Task 3', 'body': 'Third task', 'points': '5'}]
-    >>> sum_points(todos)
-    10
-    """
-    return int(todo1['points']) + int(todo2['points'])
+    pass
 
